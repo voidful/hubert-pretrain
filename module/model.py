@@ -187,7 +187,6 @@ class HubertForPretrain(HubertPreTrainedModel):
         hidden_states = self.dropout(hidden_states)
 
         logits = self.lm_head(hidden_states)
-        print(logits.shape, labels.shape)
         loss = None
         if labels is not None:
             if labels.max() >= self.config.vocab_size:

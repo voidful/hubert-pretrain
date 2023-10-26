@@ -2,7 +2,6 @@ import inspect
 import random
 import sys
 
-import asrp
 import nlp2
 from datasets import load_dataset, Audio
 from transformers import Trainer, AutoProcessor
@@ -146,8 +145,8 @@ def main(arg=None):
     print("finalize dataset")
     print("data train", data_train)
     print("data test", data_test)
-    print("train labels", len(data_train[0]['labels'][0]), data_train[0]['labels'])
-    print("test labels", len(data_test[0]['labels'][0]), data_test[0]['labels'])
+    print("train labels", data_train[0]['labels'])
+    print("test labels",  data_test[0]['labels'])
 
     if input_arg.get('sweep_split_shard', False):
         shuffled_dataset = data_train.shuffle(seed=42)
