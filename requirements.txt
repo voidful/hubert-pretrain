@@ -12,3 +12,4 @@ nlp2
 # Eric missed?
 phonemizer
 pyctcdecode
+asrp
